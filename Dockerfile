@@ -72,11 +72,9 @@ RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
 		geoip-dev \
 		perl-dev \
 	&& curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz -o nginx.tar.gz \
-	&& curl -fSL http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz.asc  -o nginx.tar.gz.asc \
 	&& curl -fSL https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/$NGINX_STICKY_MODULE_NG_VERSION.tar.gz -o nginx-sticky-module-ng.tar.gz \
 	&& curl -fSL https://github.com/openresty/headers-more-nginx-module/archive/master.zip -o headers-more-nginx-module.zip \
 	&& curl -fSL https://github.com/DawtCom/nginx-upstream-dynamic-servers/archive/$NGINX_UPSTREAM_DYNAMIC_SERVERS_VERSION.tar.gz -o nginx-upstream-dynamic-servers.tar.gz \
-	&& rm -r "$GNUPGHOME" nginx.tar.gz.asc \
 	&& mkdir -p /usr/src \
 	&& tar -zxC /usr/src -f nginx.tar.gz \
 	&& tar -zxC /usr/src -f nginx-sticky-module-ng.tar.gz \
